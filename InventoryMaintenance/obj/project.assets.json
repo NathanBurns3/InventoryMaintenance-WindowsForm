@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\InventoryMaintenance\\InventoryMaintenance\\InventoryMaintenance.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\InventoryMaintIDisplayable\\InventoryMaintenance\\InventoryMaintenance.csproj",
       "projectName": "InventoryMaintenance",
-      "projectPath": "\\\\Mac\\Home\\Desktop\\InventoryMaintenance\\InventoryMaintenance\\InventoryMaintenance.csproj",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\InventoryMaintIDisplayable\\InventoryMaintenance\\InventoryMaintenance.csproj",
       "packagesPath": "C:\\Users\\nathanburns\\.nuget\\packages\\",
-      "outputPath": "\\\\Mac\\Home\\Desktop\\InventoryMaintenance\\InventoryMaintenance\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\InventoryMaintIDisplayable\\InventoryMaintenance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nathanburns\\AppData\\Roaming\\NuGet\\NuGet.Config",

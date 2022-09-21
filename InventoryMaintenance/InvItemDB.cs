@@ -9,7 +9,6 @@ namespace InventoryMaintenance
     {
         private const string Path = @"InventoryItems.xml";
 
-        // Nathan Burns
         public static List<InvItem> GetItems()
         {
             // create the list
@@ -29,11 +28,23 @@ namespace InventoryMaintenance
                 // create one Product object for each Product node
                 do
                 {
-                    InvItem item = new InvItem();
+                    InvItem item;
                     xmlIn.ReadStartElement("Item");
-                    item.ItemNo = xmlIn.ReadElementContentAsInt();
-                    item.Description = xmlIn.ReadElementContentAsString();
-                    item.Price = xmlIn.ReadElementContentAsDecimal();
+                    string type = xmlIn.ReadElementContentAsString();
+                    if (type == "Plant")
+                    {
+                        Plant p = new Plant();
+                        ReadBase(xmlIn, p);
+                        p.Size = xmlIn.ReadElementContentAsString();
+                        item = p;
+                    }
+                    else
+                    {
+                        Supply s = new Supply();
+                        ReadBase(xmlIn, s);
+                        s.Manufacturer = xmlIn.ReadElementContentAsString();
+                        item = s;
+                    }
                     items.Add(item);
                 }
                 while (xmlIn.ReadToNextSibling("Item"));
@@ -45,7 +56,13 @@ namespace InventoryMaintenance
             return items;
         }
 
-        // Nathan Burns
+        private static void ReadBase(XmlReader xmlIn, InvItem i)
+        {
+            i.ItemNo = xmlIn.ReadElementContentAsInt();
+            i.Description = xmlIn.ReadElementContentAsString();
+            i.Price = xmlIn.ReadElementContentAsDecimal();
+        }
+
         public static void SaveItems(List<InvItem> items)
         {
             // create the XmlWriterSettings object
@@ -64,9 +81,20 @@ namespace InventoryMaintenance
             foreach (InvItem item in items)
             {
                 xmlOut.WriteStartElement("Item");
-                xmlOut.WriteElementString("ItemNo", Convert.ToString(item.ItemNo));
-                xmlOut.WriteElementString("Description", item.Description);
-                xmlOut.WriteElementString("Price", Convert.ToString(item.Price));
+                if (item.GetType().Name == "Plant")
+                {
+                    Plant p = (Plant)item;
+                    xmlOut.WriteElementString("Type", "Plant");
+                    WriteBase(p, xmlOut);
+                    xmlOut.WriteElementString("Size", p.Size);
+                }
+                else
+                {
+                    Supply s = (Supply)item;
+                    xmlOut.WriteElementString("Type", "Supply");
+                    WriteBase(s, xmlOut);
+                    xmlOut.WriteElementString("Manufacturer", s.Manufacturer);
+                }
                 xmlOut.WriteEndElement();
             }
 
@@ -75,6 +103,13 @@ namespace InventoryMaintenance
 
             // close the xmlWriter object
             xmlOut.Close();
+        }
+
+        private static void WriteBase(InvItem item, XmlWriter xmlOut)
+        {
+            xmlOut.WriteElementString("ItemNo", Convert.ToString(item.ItemNo));
+            xmlOut.WriteElementString("Description", item.Description);
+            xmlOut.WriteElementString("Price", Convert.ToString(item.Price));
         }
     }
 }

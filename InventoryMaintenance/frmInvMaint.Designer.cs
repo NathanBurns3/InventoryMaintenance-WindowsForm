@@ -39,7 +39,7 @@
             this.lstItems.FormattingEnabled = true;
             this.lstItems.ItemHeight = 15;
             this.lstItems.Location = new System.Drawing.Point(15, 16);
-            this.lstItems.Margin = new System.Windows.Forms.Padding(2);
+            this.lstItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(306, 154);
             this.lstItems.TabIndex = 10;
@@ -47,7 +47,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(350, 17);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(97, 25);
             this.btnAdd.TabIndex = 1;
@@ -58,7 +58,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(350, 54);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 25);
             this.btnDelete.TabIndex = 2;
@@ -69,7 +69,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(350, 91);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(97, 25);
             this.btnExit.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lstItems);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmInvMaint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nathan Burns Inventory Maintenance";

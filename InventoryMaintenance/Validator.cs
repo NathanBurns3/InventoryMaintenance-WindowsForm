@@ -14,6 +14,7 @@ namespace InventoryMaintenance
 			set => title = value;
 		}
 
+		//Nathan Burns
 		public static bool IsPresent(TextBox textBox)
 		{
 			if (textBox.Text == "")
@@ -25,6 +26,7 @@ namespace InventoryMaintenance
 			return true;
 		}
 
+		//Nathan Burns
 		public static bool IsDecimal(TextBox textBox)
 		{
 			decimal number = 0m;
@@ -40,6 +42,7 @@ namespace InventoryMaintenance
 			}
 		}
 
+		//Nathan Burns
 		public static bool IsInt32(TextBox textBox)
 		{
 			int number = 0;
@@ -55,6 +58,7 @@ namespace InventoryMaintenance
 			}
 		}
 
+		//Nathan Burns
 		public static bool IsWithinRange(TextBox textBox, decimal min, decimal max)
 		{
 			decimal number = Convert.ToDecimal(textBox.Text);
